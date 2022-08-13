@@ -1,12 +1,16 @@
 import styled from 'styled-components';
 
-export const HeaderContainer = styled.header`
+interface HeaderProps {
+  isSticky: boolean;
+}
+
+export const HeaderContainer = styled.header<HeaderProps>`
   display: flex;
   justify-content: space-between;
   align-items: center;
   height: 6.5rem;
   position: sticky;
-  top: 0;
+  top: ${(props) => (props.isSticky ? 0 : 'unset')};
   background: ${(props) => props.theme.white};
   z-index: 1;
   padding: 0 10rem;
