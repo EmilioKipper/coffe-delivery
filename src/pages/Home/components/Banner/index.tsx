@@ -6,14 +6,13 @@ import {
   Package,
 } from 'phosphor-react';
 import { useTheme } from 'styled-components';
+import { CircleIcon } from '../../../../components/CircleIcon';
 import BannerImg from './banner.png';
 import {
   BannerContainer,
   BannerContentContainer,
   BannerSubtitle,
   BannerTitle,
-  Icon,
-  IconContainer,
   IconGrid,
 } from './styles';
 
@@ -40,30 +39,18 @@ export function Banner() {
               color: theme.white,
             }}
           >
-            <IconContainer>
-              <Icon color="yellowDark">
-                <ShoppingCartSimple />
-              </Icon>
-              Compra simples e segura
-            </IconContainer>
-            <IconContainer>
-              <Icon color="yellow">
-                <Timer />
-              </Icon>
-              Entrega rápida e rastreada
-            </IconContainer>
-            <IconContainer>
-              <Icon color="purple">
-                <Coffee />
-              </Icon>
-              O café chega fresquinho até você
-            </IconContainer>
-            <IconContainer>
-              <Icon color="text">
-                <Package />
-              </Icon>
-              Embalagem mantém o café intacto
-            </IconContainer>
+            <CircleIcon text="Compra simples e segura" color="yellowDark">
+              <ShoppingCartSimple />
+            </CircleIcon>
+            <CircleIcon text="Entrega rápida e rastreada" color="yellow">
+              <Timer />
+            </CircleIcon>
+            <CircleIcon text="O café chega fresquinho até você" color="purple">
+              <Coffee />
+            </CircleIcon>
+            <CircleIcon text="Embalagem mantém o café intacto" color="text">
+              <Package />
+            </CircleIcon>
           </IconContext.Provider>
         </IconGrid>
       </BannerContentContainer>

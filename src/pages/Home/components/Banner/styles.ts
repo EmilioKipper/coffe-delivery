@@ -37,24 +37,3 @@ export const IconGrid = styled.div`
   grid-gap: 1.25rem;
   margin: 4rem 0;
 `;
-
-export const IconContainer = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: start;
-`;
-
-export const Icon = styled.span<IconColor>`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  padding: 0.5rem;
-  border-radius: 50%;
-  margin-right: 0.5rem;
-  background-color: ${(props) => props.theme[props.color]};
-`;
-
-interface IconColor {
-  color: 'yellowDark' | 'yellow' | 'text' | 'purple';
-}
