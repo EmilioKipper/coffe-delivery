@@ -48,12 +48,7 @@ export function Card({ description, image, name, price, tags }: CardProps) {
           <Price>{format(price)}</Price>
           <Counter />
           <CartButton>
-            <ShoppingCartSimple
-              width={22}
-              height={22}
-              weight="fill"
-              color={theme.white}
-            />
+            <ShoppingCartSimple size={22} weight="fill" color={theme.white} />
           </CartButton>
         </CardFooter>
       </CardContainer>

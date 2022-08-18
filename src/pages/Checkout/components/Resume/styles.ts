@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 export const ResumeContainer = styled.div`
   border-radius: 6px 44px;
@@ -67,7 +68,7 @@ export const ResumeRemoveButton = styled.button`
   text-transform: uppercase;
   border-radius: 6px;
   border: none;
-
+  cursor: pointer;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -112,7 +113,9 @@ export const ResumePrices = styled.div`
   }
 `;
 
-export const ResumeConfirmButton = styled.button`
+export const ResumeConfirmButton = styled(Link)`
+  cursor: pointer;
+  text-decoration: none;
   text-transform: uppercase;
   display: flex;
   flex-direction: row;

@@ -16,6 +16,11 @@ export const IconButton = styled.button`
   border-radius: 6px;
   border: none;
   height: inherit;
+  cursor: pointer;
+
+  svg:hover line {
+    stroke: ${(props) => props.theme.purpleDark};
+  }
 `;
 
 export const CounterValue = styled.span`

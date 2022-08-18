@@ -37,6 +37,8 @@ export const IconContainer = styled.div<IconContainerProps>`
   font-family: 'Roboto';
   font-size: 0.875rem;
   line-height: 130%;
+
+  cursor: pointer;
 `;
 
 interface IconContainerProps {

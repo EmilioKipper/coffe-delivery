@@ -95,7 +95,7 @@ export const CartButton = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
-
+  cursor: pointer;
   transition: 0.3s ease-out;
 
   &:hover {
