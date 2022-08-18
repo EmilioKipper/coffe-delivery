@@ -49,7 +49,7 @@ export const Icon = styled.span<IconColor>`
   align-items: center;
   justify-content: center;
 
-  padding: 8px;
+  padding: 0.5rem;
   border-radius: 50%;
   margin-right: 0.5rem;
   background-color: ${(props) => props.theme[props.color]};

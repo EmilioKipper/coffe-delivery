@@ -35,7 +35,7 @@ export const Tag = styled.span`
   background: ${(props) => props.theme.yellowLight};
   width: fit-content;
   border-radius: 100px;
-  padding: 4px 8px;
+  padding: 0.25rem 0.5rem;
 
   font-weight: 700;
   font-size: 0.625rem;
@@ -95,4 +95,10 @@ export const CartButton = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
+
+  transition: 0.3s ease-out;
+
+  &:hover {
+    background-color: ${(props) => props.theme.purple};
+  }
 `;

@@ -4,6 +4,10 @@ export const CheckoutContainer = styled.div`
   display: flex;
   justify-content: space-between;
   gap: 2rem;
+
+  > div:first-child {
+    width: 100%;
+  }
 `;
 
 export const Title = styled.p`

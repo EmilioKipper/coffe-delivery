@@ -53,6 +53,6 @@ export const FormPart2 = styled.div`
   display: flex;
 
   > input:nth-child(2) {
-    width: 18.75rem;
+    width: 100%;
   }
 `;
