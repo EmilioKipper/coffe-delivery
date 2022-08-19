@@ -5,6 +5,7 @@ import { SelectPayment } from './components/SelectPayment';
 import { CheckoutContainer, Title } from './styles';
 
 export function Checkout() {
+  // TO DO: Form validation + integatrion with context
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);

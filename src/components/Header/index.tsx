@@ -1,9 +1,19 @@
 import { useLocation, Link } from 'react-router-dom';
 import { MapPin, ShoppingCartSimple } from 'phosphor-react';
-import { CartContainer, HeaderContainer, IconContainer } from './styles';
+import {
+  CartContainer,
+  HeaderCartQuantity,
+  HeaderContainer,
+  IconContainer,
+} from './styles';
 import Logo from '../../assets/Logo.svg';
+import { useContext } from 'react';
+import { CartContext } from '../../contexts/CartContext';
 
 export function Header() {
+  const {
+    total: { quantity },
+  } = useContext(CartContext);
   const location = useLocation();
 
   const isSticky = location.pathname === '/';
@@ -22,6 +32,9 @@ export function Header() {
         <Link to="/checkout">
           <IconContainer color="yellowDark" backgroundColor="yellowLight">
             <ShoppingCartSimple weight="fill" size={22} />
+            {quantity > 0 && (
+              <HeaderCartQuantity>{quantity}</HeaderCartQuantity>
+            )}
           </IconContainer>
         </Link>
       </CartContainer>

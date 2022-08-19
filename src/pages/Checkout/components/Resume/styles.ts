@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
 export const ResumeContainer = styled.div`
+  min-width: 22.5rem;
   border-radius: 6px 44px;
   background-color: ${(props) => props.theme.card};
   padding: 2.5rem;

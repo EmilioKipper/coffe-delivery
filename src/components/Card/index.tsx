@@ -1,5 +1,8 @@
 import { ShoppingCartSimple } from 'phosphor-react';
+import { useContext } from 'react';
 import { useTheme } from 'styled-components';
+import { CartContext } from '../../contexts/CartContext';
+import { currencyFormatter } from '../../utils/currencyFormatter';
 import { Counter } from '../Counter';
 import {
   CardContainer,
@@ -22,14 +25,9 @@ interface CardProps {
   image: string;
 }
 
-function format(number: number) {
-  return new Intl.NumberFormat('pt-BR', {
-    minimumFractionDigits: 2,
-  }).format(number);
-}
-
 export function Card({ description, image, name, price, tags }: CardProps) {
   const theme = useTheme();
+  const { addProduct } = useContext(CartContext);
 
   return (
     <TransparentBackground>
@@ -45,11 +43,30 @@ export function Card({ description, image, name, price, tags }: CardProps) {
         <Description>{description}</Description>
 
         <CardFooter>
-          <Price>{format(price)}</Price>
-          <Counter />
-          <CartButton>
-            <ShoppingCartSimple size={22} weight="fill" color={theme.white} />
-          </CartButton>
+          <Price>{currencyFormatter(price)}</Price>
+          <Counter>
+            {(quantity: number) => (
+              <CartButton
+                type="button"
+                onClick={() => {
+                  addProduct({
+                    description,
+                    image,
+                    name,
+                    price,
+                    tags,
+                    quantity,
+                  });
+                }}
+              >
+                <ShoppingCartSimple
+                  size={22}
+                  weight="fill"
+                  color={theme.white}
+                />
+              </CartButton>
+            )}
+          </Counter>
         </CardFooter>
       </CardContainer>
     </TransparentBackground>

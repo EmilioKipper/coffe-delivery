@@ -24,6 +24,7 @@ export const CartContainer = styled.div`
 `;
 
 export const IconContainer = styled.div<IconContainerProps>`
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -39,6 +40,27 @@ export const IconContainer = styled.div<IconContainerProps>`
   line-height: 130%;
 
   cursor: pointer;
+`;
+
+export const HeaderCartQuantity = styled.div`
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  right: -8.35px;
+  top: -8px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: ${(props) => props.theme.yellowDark};
+  border-radius: 1000px;
+
+  font-size: 0.75rem;
+  font-weight: 700;
+  line-height: 130%;
+  text-align: center;
+  color: ${(props) => props.theme.white};
 `;
 
 interface IconContainerProps {
