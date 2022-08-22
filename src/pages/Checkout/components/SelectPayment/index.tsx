@@ -6,6 +6,7 @@ import {
   IconContext,
 } from 'phosphor-react';
 import { useState } from 'react';
+import { useFormContext } from 'react-hook-form';
 import { useTheme } from 'styled-components';
 import {
   SelectPaymentContainer,
@@ -18,6 +19,7 @@ import {
 
 export function SelectPayment() {
   const theme = useTheme();
+  const { register } = useFormContext();
   const [option, setOption] = useState('');
 
   return (
@@ -41,29 +43,27 @@ export function SelectPayment() {
           }}
         >
           <SelectPaymentLabel
-            onClick={() => setOption('Crédito')}
-            current={option === 'Crédito'}
+            onClick={() => setOption('Cartão de Crédito')}
+            current={option === 'Cartão de Crédito'}
           >
             <CreditCard />
             <input
               type="radio"
-              name="select"
-              onChange={() => {}}
-              checked={option === 'Crédito'}
+              value="Cartão de Crédito"
+              {...register('paymentMethod')}
             />
             <span>Cartão de crédio</span>
           </SelectPaymentLabel>
 
           <SelectPaymentLabel
-            onClick={() => setOption('Débito')}
-            current={option === 'Débito'}
+            onClick={() => setOption('Cartão de Débito')}
+            current={option === 'Cartão de Débito'}
           >
             <Bank />
             <input
               type="radio"
-              name="select"
-              onChange={() => {}}
-              checked={option === 'Débito'}
+              value="Cartão de Débito"
+              {...register('paymentMethod')}
             />
             <span>Cartão de débito</span>
           </SelectPaymentLabel>
@@ -75,9 +75,8 @@ export function SelectPayment() {
             <Money />
             <input
               type="radio"
-              name="select"
-              onChange={() => {}}
-              checked={option === 'Dinheiro'}
+              value="Dinheiro"
+              {...register('paymentMethod')}
             />
             <span>Dinheiro</span>
           </SelectPaymentLabel>

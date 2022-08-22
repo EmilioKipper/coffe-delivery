@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
 
 export const ResumeContainer = styled.div`
   min-width: 22.5rem;
@@ -114,7 +113,7 @@ export const ResumePrices = styled.div`
   }
 `;
 
-export const ResumeConfirmButton = styled(Link)`
+export const ResumeConfirmButton = styled.button`
   cursor: pointer;
   text-decoration: none;
   text-transform: uppercase;

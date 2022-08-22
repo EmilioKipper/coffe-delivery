@@ -10,12 +10,22 @@ export interface Product {
   quantity: number;
 }
 
-interface CartState {
+export interface CartState {
   total: {
     quantity: number;
     price: number;
   };
   products: Product[];
+  finishedOrder: {
+    cep: string;
+    street: string;
+    number: string;
+    complement: string;
+    district: string;
+    city: string;
+    uf: string;
+    paymentMethod: string;
+  };
 }
 
 interface Action {
@@ -60,6 +70,14 @@ export function cartReducer(state: CartState, action: Action) {
         );
 
         calculateCart(draft);
+      });
+    case ActionTypes.FINISH_ORDER:
+      return produce(state, (draft) => {
+        draft.finishedOrder = action.payload.finishedOrder;
+
+        draft.products = [];
+        draft.total.price = 0;
+        draft.total.quantity = 0;
       });
     default:
       return state;

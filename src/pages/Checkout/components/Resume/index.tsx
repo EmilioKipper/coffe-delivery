@@ -72,7 +72,7 @@ export function Resume() {
         </div>
       </ResumePrices>
 
-      <ResumeConfirmButton to="/success">Confirmar pedido</ResumeConfirmButton>
+      <ResumeConfirmButton type="submit">Confirmar pedido</ResumeConfirmButton>
     </ResumeContainer>
   );
 }

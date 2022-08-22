@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@hookform/resolvers": "^2.9.7",
     "@types/styled-components": "^5.1.25",
     "immer": "^9.0.15",
     "phosphor-react": "^1.4.1",

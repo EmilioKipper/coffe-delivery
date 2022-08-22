@@ -1,6 +1,6 @@
 import { MapPinLine } from 'phosphor-react';
 import { useTheme } from 'styled-components';
-import { Input } from '../Input';
+import { useFormContext } from 'react-hook-form';
 import {
   AddressFormContainer,
   AddressHeader,
@@ -9,10 +9,12 @@ import {
   FormContainer,
   FormPart1,
   FormPart2,
+  InputBase,
 } from './styles';
 
 export function AddressForm() {
   const theme = useTheme();
+  const { register } = useFormContext();
 
   return (
     <AddressFormContainer>
@@ -29,27 +31,41 @@ export function AddressForm() {
       </AddressHeader>
 
       <FormContainer>
-        <Input
+        <InputBase
           type="text"
           placeholder="CEP"
           maxLength={9}
           size={9}
           pattern="\d{5}-\d{3}"
+          {...register('cep')}
         />
-        <Input type="text" placeholder="Logradouro" />
+        <InputBase
+          type="text"
+          placeholder="Logradouro"
+          {...register('street')}
+        />
         <FormPart1>
-          <Input type="text" placeholder="Nº" />
-          <Input type="text" placeholder="Complemento (Opcional)" />
+          <InputBase type="text" placeholder="Nº" {...register('number')} />
+          <InputBase
+            type="text"
+            placeholder="Complemento (Opcional)"
+            {...register('complement')}
+          />
         </FormPart1>
         <FormPart2>
-          <Input type="text" placeholder="Bairro" />
-          <Input type="text" placeholder="Cidade" />
-          <Input
+          <InputBase
+            type="text"
+            placeholder="Bairro"
+            {...register('district')}
+          />
+          <InputBase type="text" placeholder="Cidade" {...register('city')} />
+          <InputBase
             type="text"
             placeholder="UF"
             maxLength={2}
             size={2}
             pattern="\w{2}"
+            {...register('uf')}
           />
         </FormPart2>
       </FormContainer>

@@ -8,9 +8,14 @@ import {
 } from './styles';
 import { CircleIcon } from '../../components/CircleIcon';
 import delivery from './Delivery.png';
+import { CartContext } from '../../contexts/CartContext';
+import { useContext } from 'react';
 
 export function Success() {
   const theme = useTheme();
+  const {
+    finishedOrder: { street, number, paymentMethod, district, city, uf },
+  } = useContext(CartContext);
 
   return (
     <>
@@ -32,8 +37,9 @@ export function Success() {
                 <MapPin />
               </CircleIcon>
               <div>
-                Entrega em <strong>rua em negrito + numero</strong> resto do
-                endereço
+                Entrega em <strong>{`${street}, ${number}`}</strong>
+                <br />
+                {`${district} - ${city}, ${uf}`}
               </div>
             </SuccessInfoItem>
             <SuccessInfoItem>
@@ -55,7 +61,7 @@ export function Success() {
               <div>
                 <div>Pagamento na entrega</div>
                 <div>
-                  <strong>Cartão de crédito</strong>
+                  <strong>{paymentMethod}</strong>
                 </div>
               </div>
             </SuccessInfoItem>
