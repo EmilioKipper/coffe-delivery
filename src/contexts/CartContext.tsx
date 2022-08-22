@@ -1,4 +1,4 @@
-import { createContext, ReactNode, useReducer } from 'react';
+import { createContext, ReactNode, useEffect, useReducer } from 'react';
 import { CheckoutFormData } from '../pages/Checkout';
 import {
   addCartItem,
@@ -20,24 +20,42 @@ interface CartContextProps extends CartState {
 
 export const CartContext = createContext({} as CartContextProps);
 
+const initialState = {
+  total: {
+    quantity: 0,
+    price: 0,
+  },
+  products: [],
+  finishedOrder: {
+    cep: '',
+    street: '',
+    number: '',
+    complement: '',
+    district: '',
+    city: '',
+    uf: '',
+    paymentMethod: '',
+  },
+};
+
 export function CartContextProvider({ children }: CartContextProvider) {
-  const [cartState, dispatch] = useReducer(cartReducer, {
-    total: {
-      quantity: 0,
-      price: 0,
-    },
-    products: [],
-    finishedOrder: {
-      cep: '',
-      street: '',
-      number: '',
-      complement: '',
-      district: '',
-      city: '',
-      uf: '',
-      paymentMethod: '',
-    },
+  const [cartState, dispatch] = useReducer(cartReducer, initialState, () => {
+    const storedStateAsJSON = localStorage.getItem(
+      '@coffe-delivery:cart-state-1.0.0',
+    );
+
+    if (storedStateAsJSON) {
+      return JSON.parse(storedStateAsJSON);
+    } else {
+      return initialState;
+    }
   });
+
+  useEffect(() => {
+    const stateJSON = JSON.stringify(cartState);
+
+    localStorage.setItem('@coffe-delivery:cart-state-1.0.0', stateJSON);
+  }, [cartState]);
 
   const { products, total, finishedOrder } = cartState;
 
