@@ -46,7 +46,7 @@ export function Checkout() {
 
   function handleCheckoutSubmit(data: CheckoutFormData) {
     finishCart(data);
-    navigate('/success');
+    navigate('/success', { state: { from: '/checkout' } });
   }
 
   useEffect(() => {

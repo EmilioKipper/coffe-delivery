@@ -1,4 +1,4 @@
-import { useLocation, Link } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import { MapPin, ShoppingCartSimple } from 'phosphor-react';
 import {
   CartContainer,
@@ -9,6 +9,7 @@ import {
 import Logo from '../../assets/Logo.svg';
 import { useContext } from 'react';
 import { CartContext } from '../../contexts/CartContext';
+import { Link } from '../Link';
 
 export function Header() {
   const {
