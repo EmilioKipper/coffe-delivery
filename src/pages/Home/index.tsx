@@ -1,5 +1,5 @@
-import { getData } from '../../services';
-import { Card } from '../../components/Card';
+import { getData } from '@services';
+import { Card } from '@components/Card';
 import { CoffeList, HomeContainer } from './styles';
 import { Banner } from './components/Banner';
 

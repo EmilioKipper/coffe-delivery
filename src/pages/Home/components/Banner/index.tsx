@@ -6,7 +6,7 @@ import {
   Package,
 } from 'phosphor-react';
 import { useTheme } from 'styled-components';
-import { CircleIcon } from '../../../../components/CircleIcon';
+import { CircleIcon } from '@components/CircleIcon';
 import BannerImg from './banner.png';
 import {
   BannerContainer,

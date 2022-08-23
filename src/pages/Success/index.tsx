@@ -6,9 +6,9 @@ import {
   SuccessInfoContainer,
   SuccessInfoItem,
 } from './styles';
-import { CircleIcon } from '../../components/CircleIcon';
+import { CircleIcon } from '@components/CircleIcon';
 import delivery from './Delivery.png';
-import { CartContext } from '../../contexts/CartContext';
+import { CartContext } from '@contexts/CartContext';
 import { useContext } from 'react';
 
 export function Success() {

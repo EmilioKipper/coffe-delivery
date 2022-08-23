@@ -6,9 +6,9 @@ import {
   HeaderContainer,
   IconContainer,
 } from './styles';
-import Logo from '../../assets/Logo.svg';
+import Logo from '@assets/Logo.svg';
 import { useContext } from 'react';
-import { CartContext } from '../../contexts/CartContext';
+import { CartContext } from '@contexts/CartContext';
 import { Link } from '../Link';
 
 export function Header() {

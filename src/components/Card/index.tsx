@@ -1,8 +1,8 @@
 import { ShoppingCartSimple } from 'phosphor-react';
 import { useContext } from 'react';
 import { useTheme } from 'styled-components';
-import { CartContext } from '../../contexts/CartContext';
-import { currencyFormatter } from '../../utils/currencyFormatter';
+import { CartContext } from '@contexts/CartContext';
+import { currencyFormatter } from '@utils/currencyFormatter';
 import { Counter } from '../Counter';
 import {
   CardContainer,

@@ -2,9 +2,9 @@ import { Trash } from 'phosphor-react';
 import { Fragment, useContext } from 'react';
 import { useTheme } from 'styled-components';
 
-import { Counter } from '../../../../components/Counter';
-import { CartContext } from '../../../../contexts/CartContext';
-import { currencyFormatter } from '../../../../utils/currencyFormatter';
+import { Counter } from '@components/Counter';
+import { CartContext } from '@contexts/CartContext';
+import { currencyFormatter } from '@utils/currencyFormatter';
 import {
   ResumeConfirmButton,
   ResumeContainer,

@@ -6,7 +6,7 @@ import { CheckoutContainer, Title } from './styles';
 import { useForm, FormProvider } from 'react-hook-form';
 import * as zod from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { CartContext } from '../../contexts/CartContext';
+import { CartContext } from '@contexts/CartContext';
 import { useNavigate } from 'react-router-dom';
 
 const checkoutFormValidationSchema = zod.object({
